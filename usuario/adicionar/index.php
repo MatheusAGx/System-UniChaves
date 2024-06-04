@@ -112,7 +112,7 @@ if (isset($_POST['cadastrar'])) {
     $cidade = $conn->real_escape_string($_POST['cidade']);
     $uf = $conn->real_escape_string($_POST['uf']);
     $tipo = $conn->real_escape_string($_POST['tipo']);
-
+    $id_instituicao = $conn->real_escape_string($_POST['instituicao']);
     $senha = sha1($senhas);
 
     $q_insert_usuario = "INSERT INTO cl203168.usuarios (nome, senha, cpf, cnpj, email, telefone, endereco, bairro, cep, numero, cidade, uf, id_instituicao, id_usuario_tipo) VALUES ('$nome', '$senha', '$cpf', '$cnpj', '$email', '$tel', '$endereco', '$bairro', '$cep', '$numero_casa', '$cidade', '$uf', '$id_instituicao', '$tipo')";

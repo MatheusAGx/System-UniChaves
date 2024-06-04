@@ -39,10 +39,11 @@
                 <div class="col-6">
                     <h6>Instituicao </h6>
                     <select name="instituicao" id="instituicao" class="form-control">
-                        <option value="1">Unicamp - FT</option>
-                        <option value="2">Unicamp - FCA</option>
-                        <option value="3">Cotil</option>
-                        <option value="4">Portaria</option>
+                        <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
+                        <option value="<?= $instituicao->id?>"
+                        <?php if ($instituicao->id == $id) { echo "selected"; } ?>
+                        > <?=$instituicao->descricao?> </option>
+                        <?php } ?>
                     </select>
                 </div>
             </div>

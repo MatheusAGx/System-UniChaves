@@ -36,4 +36,7 @@ if (isset($_POST['cadastrar'])) {
 $q_busca_chave = "SELECT * FROM chave WHERE id = '$id'";
 $busca_chave = $conn->query($q_busca_chave);
 
+$q_busca_intituicao = "SELECT * FROM usuarios_instituicao";
+$busca_instituicao = $conn->query($q_busca_intituicao);
+
 include "view.php";

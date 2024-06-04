@@ -31,5 +31,8 @@ if (isset($_POST['cadastrar'])) {
     }
 }
 
+$q_busca_intituicao = "SELECT * FROM chave_instituicao";
+$busca_instituicao = $conn->query($q_busca_intituicao);
+
 include "view.php";
 
