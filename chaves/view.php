@@ -22,7 +22,7 @@ include "../config/header/header.php";
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
-          <div><small>Status: <?= $chave['id_status'] ?> | Instituição: <?= $chave['instituicao'] ?> | Usuário: <?= $chave['id_usuario'] ?> </small> </div>
+          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> | Usuário: <?= $chave['id_usuario'] ?> </small> </div>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
         </div>
       </div>

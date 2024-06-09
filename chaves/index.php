@@ -2,7 +2,7 @@
 <?php
 include "../config/config.php";
 
-$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao FROM chave";
+$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo FROM chave";
 $busca_chave = $conn->query($q_busca_chave);
 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
