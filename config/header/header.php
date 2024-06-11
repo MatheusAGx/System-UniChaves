@@ -167,6 +167,13 @@ if (!isset($_SESSION))
     bottom: 0;
   }
 
+  #status {
+    width: 15px;
+    height: 15px;
+    margin-right: 1vw;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
 
 </style>
 

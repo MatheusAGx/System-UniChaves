@@ -7,6 +7,24 @@
                     <a href="#" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
+
+            <!-- ALERTAS -->
+
+            <?php if ($sucesso): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?= $msg ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>  
+            <?php endif; ?>
+
+            <?php if ($erro): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?= $msg ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
+
+            <!-- CORPO DA PAGINA -->
       
             <div class="card card-hover m-3">
                 <div class="card-body">
@@ -14,15 +32,21 @@
                         <div class="row p-2">
                             <div class="col-6 col-sm-6">
                                 <h6>Selecione o usuário:</h6>
-                                <select class="form-control" id="usuario" name="usuario">
-                                    <option><?= $usuarios->nome ?></option>
+                                <select class="form-select" id="usuario" name="usuario">
+                                    <option value="0" selected></option>
+                                    <?php while ($usuarios = $busca_usuario->fetch_object()) { ?>
+                                    <option value="<?=$usuarios->id?>"> <?=$usuarios->nome?> </option>
+                                    <?php } ?> 
                                 </select>
                             </div>
 
                             <div class="col-6 col-sm-6">
                                 <h6>Selecione a chave: </h6>
-                                <select class="form-control" id="chave" name="chave">
-                                    <option></option>
+                                <select class="form-select" id="chave" name="chave">
+                                    <option value="0" selected></option>
+                                    <?php while ($chaves = $busca_chave->fetch_object()) { ?>
+                                        <option value="<?=$chaves->id?>"> <?= $chaves->nome ?> </option>
+                                    <?php } ?> 
                                 </select>
                             </div>
                         </div>
@@ -30,7 +54,7 @@
                         <div class="row p-2">
                             <div class="col-6 col-sm-6">
                                 <h6>Data: </h6>
-                                <input class="form-control" type="date" id="dataSel" name="dataSel">
+                                <input class="form-control" type="date" id="data_ocorrencia" name="data_ocorrencia">
                             </div>
 
                             <div class="col-6 col-sm-6">
@@ -49,7 +73,7 @@
                         </div>
 
                         <div class="row p-2">
-                            <div class="col-12 col-sm-12">
+                            <div class="col-12 col-sm-12"> 
                                 <button class="btn btn-primary" type="submit" id="registrar" name="registrar">Salvar</button>
                                 <button class="btn btn-danger" type="submit" id="enviarEmail" name="enviarEmail" style="float:right">Enviar notificação via e-mail</button>
                             </div>
@@ -62,4 +86,3 @@
 <?php 
     include "../config/footer/footer.php";
 ?>
-</html>
