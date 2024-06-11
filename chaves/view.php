@@ -15,7 +15,11 @@ include "../config/header/header.php";
 
     <div class="card card-hover my-2">
       <div class="card-header" style="align-items: center;">
-        <button id="status" style=""></button><strong><?= $chave['nome'] ?></strong>
+        <button id="status" style="<?php
+         if ($chave['tipo'] == "Disponivel") { echo "background-color: green;";} 
+         if ($chave['tipo'] == "Ocupada") { echo "background-color: red;";} 
+         if ($chave['tipo'] == "Reservada") { echo "background-color: orange;";} 
+         ?>"></button><strong><?= $chave['nome'] ?></strong>
         <a class="btn btn-outline-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a>
         <a class="btn btn-outline-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $chave['id'] ?>"> Deletar </a>
         <a class="btn btn-outline-warning btn-sm" style="float: right;" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a>
