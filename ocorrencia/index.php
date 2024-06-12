@@ -1,5 +1,6 @@
 <?php 
-
+require '../vendor/autoload.php';
+include "enviaEmail.php";
 include "../config/config.php";
 
 if(isset($_POST['registrar'])) {
@@ -40,6 +41,5 @@ $busca_chave = $conn->query($q_busca_chave);
 
 $q_busca_usuario = "SELECT * FROM usuarios";
 $busca_usuario = $conn->query($q_busca_usuario);
-
 
 include "view.php";
