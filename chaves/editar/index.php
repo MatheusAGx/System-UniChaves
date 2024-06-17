@@ -14,7 +14,7 @@ if (isset($_POST['cadastrar'])) {
     $descricao = $conn->real_escape_string($_POST['descricao']);
     $id_usuario = $_SESSION['id'];
 
-    $q_update_chave = "UPDATE chave SET nome = '$nome', descricao = '$descricao', instituicao = '$instituicao', id_status = 1, id_usuario = '$id_usuario' WHERE id = '$id'";
+    $q_update_chave = "UPDATE chave SET nome = '$nome', descricao = '$descricao', id_instituicao = '$instituicao', id_usuario = '$id_usuario' WHERE id = '$id'";
 
     if ($nome == '') {
         $erro = true;
@@ -33,10 +33,10 @@ if (isset($_POST['cadastrar'])) {
     }
 }
 
-$q_busca_chave = "SELECT * FROM chave WHERE id = '$id'";
+$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) as instituicao FROM chave WHERE id = '$id'";
 $busca_chave = $conn->query($q_busca_chave);
 
-$q_busca_intituicao = "SELECT * FROM usuarios_instituicao";
+$q_busca_intituicao = "SELECT * FROM chave_instituicao";
 $busca_instituicao = $conn->query($q_busca_intituicao);
 
 include "view.php";

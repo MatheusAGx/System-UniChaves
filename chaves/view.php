@@ -11,6 +11,29 @@ include "../config/header/header.php";
     </div>
   </div>
 
+<!-- FILTROS -->
+  <div class="card my-2">
+    <div class="card-body">
+      <form action="" method="post" id="formFiltro">
+        <div class="row">
+          <div class="col-12">
+            <input class="form-control" type="text" name="filtro_nome" id="filtro_nome" placeholder="Digite o nome da chave">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mt-2">
+            <button class="btn btn-primary" type="submit" name="filtrar" id="filtrar">Filtrar</button>
+          </div>
+          <div class="col-6 mt-2">
+            <?php if(isset($_POST['filtrar'])) { ?>
+            <a class="btn btn-danger" href="./index.php" style="float:right;">Limpar Filtro</a>
+            <?php } ?>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <?php foreach ($pagination['results'] as $chave) : ?>
 
     <div class="card card-hover my-2">
@@ -26,7 +49,7 @@ include "../config/header/header.php";
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
-          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> | Usuário: <?= $chave['id_usuario'] ?> </small> </div>
+          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> | Usuário: <?= $chave['usuario'] ?> </small> </div>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
         </div>
       </div>

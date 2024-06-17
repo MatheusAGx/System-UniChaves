@@ -41,7 +41,7 @@
                     <select name="instituicao" id="instituicao" class="form-control">
                         <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
                         <option value="<?= $instituicao->id?>"
-                        <?php if ($instituicao->id == $id) { echo "selected"; } ?>
+                        <?php if ($instituicao->id == $chave->id_instituicao) { echo "selected"; } ?>
                         > <?=$instituicao->descricao?> </option>
                         <?php } ?>
                     </select>

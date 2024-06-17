@@ -27,6 +27,18 @@ include "../../config/header/header.php";
     </div>
 </div>
 
+<div class="card my-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <form method="get" action="./" name="formFiltro">
+                    <input type="text" class="form-control" name="filtro_nome">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="card my-2" style="width: full;">
     <form method="post" action="" name="formDelete">
         <div class="alert alert-danger" role="alert">
