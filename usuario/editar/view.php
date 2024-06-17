@@ -40,18 +40,16 @@
             <div class="col-3">
                 <h6>Tipo: </h6>
                 <select class="form-control" name="instituicao" id="instituicao">
-                    <option value="<?= $usuario->id_instituicao?>" selected><?= $usuario->instituicao?></option>
                     <?php while($tipo = $busca_tipo->fetch_object()) { ?>
-                        <option value="<?= $tipo->id?> "> <?=$tipo->descricao?> </option>
+                        <option value="<?= $tipo->id?>" <?php if ($tipo->id == $usuario->id_usuario_tipo) { echo "selected"; } ?>> <?=$tipo->descricao?> </option>
                     <?php } ?>
                 </select>
             </div>
             <div class="col-3">
                 <h6>Instituição: </h6>
                 <select class="form-control" name="tipo" id="tipo">
-                    <option value="<?= $usuario->id_usuario_tipo?>" selected><?= $usuario->tipo?></option>
                     <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
-                        <option value="<?= $instituicao->id?> "> <?=$instituicao->descricao?> </option>
+                        <option value="<?= $instituicao->id?>" <?php if ($instituicao->id == $usuario->id_instituicao) { echo "selected"; } ?>> <?=$instituicao->descricao?> </option>
                     <?php } ?>
                 </select>
             </div>
