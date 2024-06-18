@@ -117,11 +117,11 @@ if (isset($_POST['cadastrar'])) {
 
     $q_insert_usuario = "INSERT INTO cl203168.usuarios (nome, senha, cpf, cnpj, email, telefone, endereco, bairro, cep, numero, cidade, uf, id_instituicao, id_usuario_tipo) VALUES ('$nome', '$senha', '$cpf', '$cnpj', '$email', '$tel', '$endereco', '$bairro', '$cep', '$numero_casa', '$cidade', '$uf', '$id_instituicao', '$tipo')";
 
-    if (validarCPF($cpf) == false) 
+    if (validarCPF($cpf) == false && !empty($cpf))
     {
         $erro = true;
         $msg = "O CPF não é válido!";
-    } else if ((validarCNPJ($cnpj) == false) && !empty($cnpj)) {
+    } else if (validarCNPJ($cnpj) == false && !empty($cnpj)) {
         $erro = true;
         $msg = "O CNPJ não é válido!";
     } else if (validarEmail($email) == false) {

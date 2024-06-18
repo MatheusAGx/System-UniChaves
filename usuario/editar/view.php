@@ -30,8 +30,8 @@
 <div class="card my-2" style="width: full;">
   
     <div class="card-body">
-        <h3 class="card-title">Cadastro de Usúário</h3>
-        <form method="post" action="#" name="regUsuario" enctype="multipart/form-data"> 
+        <h3 class="card-title">Edição de Usúário</h3>
+        <form method="post" action="" name="regUsuario" enctype="multipart/form-data"> 
         <div class="row p-2" >
             <div class="col-6">
                 <h6>Nome: </h6>
@@ -39,17 +39,17 @@
             </div>
             <div class="col-3">
                 <h6>Tipo: </h6>
-                <select class="form-control" name="instituicao" id="instituicao">
+                <select class="form-select" name="tipo" id="tipo">
                     <?php while($tipo = $busca_tipo->fetch_object()) { ?>
-                        <option value="<?= $tipo->id?>" <?php if ($tipo->id == $usuario->id_usuario_tipo) { echo "selected"; } ?>> <?=$tipo->descricao?> </option>
+                        <option value="<?= $tipo->id?>" <?php if ($usuario->id_usuario_tipo == $tipo->id ) { echo "selected"; } ?>> <?=$tipo->descricao?> </option>
                     <?php } ?>
                 </select>
             </div>
             <div class="col-3">
                 <h6>Instituição: </h6>
-                <select class="form-control" name="tipo" id="tipo">
+                <select class="form-select" name="instituicao" id="instituicao">
                     <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
-                        <option value="<?= $instituicao->id?>" <?php if ($instituicao->id == $usuario->id_instituicao) { echo "selected"; } ?>> <?=$instituicao->descricao?> </option>
+                        <option value="<?= $instituicao->id?>" <?php if ($usuario->id_instituicao == $instituicao->id) { echo "selected"; }?>> <?=$instituicao->descricao?> </option>
                     <?php } ?>
                 </select>
             </div>
@@ -155,7 +155,7 @@
             </div>
         </div>
             
-        <button name="cadastrar" id="cadastrar" class="btn btn-primary mt-2">Cadastrar</a>
+        <button name="cadastrar" id="cadastrar" class="btn btn-primary mt-2">Salvar</a>
     </form>
     </div>
 </div>
@@ -326,6 +326,20 @@
         if (telefone.length == 10 && [2, 3, 4, 5, 7].indexOf(parseInt(telefone.substring(2, 3))) == -1) return false;
 
         return true;
+    }
+
+    function msgTelefone1() {
+        var telefone = document.getElementById("tel1").value;
+        var msg = document.getElementById("msg_tel");
+        if (telefone_validation(telefone)) {
+            msg.style.display = "inline";
+            msg.style.color = "green";
+            msg.innerHTML = "Telefone válido!";
+        } else {
+            msg.style.display = "inline";
+            msg.style.color = "red";
+            msg.innerHTML = "Telefone inválido!";
+        }
     }
 
 </script>

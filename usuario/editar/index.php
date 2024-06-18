@@ -115,10 +115,13 @@ if (isset($_POST['cadastrar'])) {
     $uf = $conn->real_escape_string($_POST['uf']);
     $tipo = $conn->real_escape_string($_POST['tipo']);
 
+    echo $instituicao;
+    echo $tipo;
+
     /* id_usuario = $_SESSION['id']; */
     $senha = sha1($senhas);
 
-    $q_update = "UPDATE cl203168.usuarios SET 
+    $q_update = "UPDATE usuarios SET 
         nome = '$nome',
         senha = '$senha',
         cpf = '$cpf',
@@ -136,11 +139,11 @@ if (isset($_POST['cadastrar'])) {
         complemento = '$complemento'
      WHERE id = '$id' ";
 
-    if (validarCPF($cpf) == false) 
+    if (validarCPF($cpf) == false && !empty($cpf))
     {
         $erro = true;
         $msg = "O CPF não é válido!";
-    } else if ((validarCNPJ($cnpj) == false) && !empty($cnpj)) {
+    } else if (validarCNPJ($cnpj) == false && !empty($cnpj)) {
         $erro = true;
         $msg = "O CNPJ não é válido!";
     } else if (validarEmail($email) == false) {

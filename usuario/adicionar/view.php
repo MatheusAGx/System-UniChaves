@@ -40,16 +40,16 @@
             <div class="col-3">
                 <h6>Instituicao: </h6>
                 <select class="form-control" name="instituicao" id="instituicao">
-                    <?php while($tipo = $busca_tipo->fetch_object()) { ?>
-                        <option value="<?= $tipo->id?> "> <?=$tipo->descricao?> </option>
+                    <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
+                        <option value="<?= $instituicao->id?> "> <?=$instituicao->descricao?> </option>
                     <?php } ?>
                 </select>
             </div>
             <div class="col-3">
                 <h6>Tipo: </h6>
                 <select class="form-control" name="tipo" id="tipo">
-                    <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
-                        <option value="<?= $instituicao->id?> "> <?=$instituicao->descricao?> </option>
+                <?php while($tipo = $busca_tipo->fetch_object()) { ?>
+                        <option value="<?= $tipo->id?> "> <?=$tipo->descricao?> </option>
                     <?php } ?>
                 </select>
             </div>
@@ -88,15 +88,10 @@
                 <span class="p-1 validacao" id="msg_email"></span>
             </div>
         
-            <div class="col-3">
-                <h6>Telefone(Celular): </h6>
+            <div class="col-6">
+                <h6>Telefone: </h6>
                 <input id="tel1" onkeyup="msgTelefone1()" name="tel" type="text" class="form-control" placeholder="(DDD) + Número" aria-label="(DDD) 9 xxxx-xxxx">
                 <span class="p-1 validacao" id="msg_tel"></span>
-            </div>
-            <div class="col-3">
-                <h6>Telefone (Fixo ou Celular 2) </h6>
-                <input id="tel2" onkeyup="msgTelefone2()" name="tel2" type="text" class="form-control" placeholder="(DDD) + Número" aria-label="(DDD) xxxx-xxxx">
-                <span class="p-1 validacao" id="msg_tel2"></span>
             </div>
         </div>
         <br>
@@ -333,6 +328,20 @@
         if (telefone.length == 10 && [2, 3, 4, 5, 7].indexOf(parseInt(telefone.substring(2, 3))) == -1) return false;
 
         return true;
+    }
+
+    function msgTelefone1() {
+        var telefone = document.getElementById("tel1").value;
+        var msg = document.getElementById("msg_tel");
+        if (telefone_validation(telefone)) {
+            msg.style.display = "inline";
+            msg.style.color = "green";
+            msg.innerHTML = "Telefone válido!";
+        } else {
+            msg.style.display = "inline";
+            msg.style.color = "red";
+            msg.innerHTML = "Telefone inválido!";
+        }
     }
 
 </script>

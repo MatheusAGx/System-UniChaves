@@ -14,6 +14,7 @@ include "../config/header/header.php";
 <!-- FILTROS -->
 <div class="card my-2">
     <div class="card-body">
+      <h6 class="p-1">Filtros</h6>
       <form action="" method="post" id="formFiltro">
         <div class="row">
           <div class="col-3">
@@ -48,26 +49,26 @@ include "../config/header/header.php";
     <div class="card card-hover my-2">
       <div class="card-header" style="align-items: center;">
         <strong><?= $usuario['nome'] ?></strong>
-        <a class="btn btn-outline-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $usuario['id'] ?>"> Deletar </a>
-        <a class="btn btn-outline-warning btn-sm" style="float: right;" href="./editar/?id=<?= $usuario['id'] ?>"> Editar </a>
+        <a class="btn btn-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $usuario['id'] ?>"> Deletar </a>
+        <a class="btn btn-info btn-sm" style="float: right;" href="./editar/?id=<?= $usuario['id'] ?>"> Editar </a>
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
-          <div class="row px-3">
-
-            <?php if ($usuario['cnpj'] != "") { ?>
-              <p> CNPJ: <?= $usuario['cnpj'] ?> |
+          <div class="row px-1">
+            <small>
+              <?php if ($usuario['cnpj'] != "") { ?>
+                CNPJ: <?= $usuario['cnpj'] ?> |
               <?php } else { ?>
                 CPF: <?= $usuario['cpf'] ?> |
               <?php } ?>
-
-              Email: <?= $usuario['email'] ?> |
-
-              Telefone: <?= $usuario['telefone'] ?> | </p>
-
+                Email: <?= $usuario['email'] ?> |
+                Telefone: <?= $usuario['telefone'] ?>
+            </small>
           </div>
           <div class="row px-1">
+          <small>
             <strong> <?= $usuario['tipo'] ?> - <?= $usuario['instituicao'] ?> </strong>
+          </small>
           </div>
         </div>
       </div>
