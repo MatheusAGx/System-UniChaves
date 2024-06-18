@@ -14,20 +14,24 @@ include "../config/header/header.php";
 <!-- FILTROS -->
 <div class="card my-2">
     <div class="card-body">
-      <h6 class="p-1">Filtros</h6>
+      <h5>Filtros</h5>
       <form action="" method="post" id="formFiltro">
         <div class="row">
           <div class="col-3">
+            <small><strong>Nome:</strong></small>
             <input class="form-control" type="text" name="filtro_nome" id="filtro_nome" placeholder="Digite o nome do usuario">
           </div>
           <div class="col-3">
-            <input class="form-control" type="text" name="filtro_cpf" id="filtro_nome" placeholder="Digite o CPF do usuário">
+            <small><strong>CPF:</strong></small>
+            <input class="form-control" type="text" name="filtro_cpf" id="filtro_cpf" placeholder="Digite o CPF do usuário">
           </div>
           <div class="col-3">
-            <input class="form-control" type="text" name="filtro_email" id="filtro_nome" placeholder="Digite o email do usuário">
+            <small><strong>Email:</strong></small>
+            <input class="form-control" type="text" name="filtro_email" id="filtro_email" placeholder="Digite o email do usuário">
           </div>
           <div class="col-3">
-            <input class="form-control" type="text" name="filtro_telefone" id="filtro_nome" placeholder="Digite o telefone do usuário">
+            <small><strong>Telefone:</strong></small>
+            <input class="form-control" type="text" name="filtro_telefone" id="filtro_telefone" placeholder="Digite o telefone do usuário">
           </div>
         </div>
         <div class="row">

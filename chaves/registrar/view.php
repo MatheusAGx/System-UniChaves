@@ -33,7 +33,7 @@
             <div class="row p-2">
                 <div class="col-12">
                     <h6>Selecione o usuário:</h6>
-                    <select class="form-select" name="usuario" id="usuario">
+                    <select class="form-select" name="id_usuario" id="id_usuario">
                         <option value="0" selected></option>
                         <?php while($usuario = $busca_usuario->fetch_object()) { ?>
                         <option value=<?=$usuario->id?>><?=$usuario->nome?></option>

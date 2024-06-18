@@ -14,10 +14,11 @@ include "../config/header/header.php";
 <!-- FILTROS -->
   <div class="card my-2">
     <div class="card-body">
-    <h6 class="p-1">Filtros</h6>
+    <h5>Filtros</h5>
       <form action="" method="post" id="formFiltro">
         <div class="row">
           <div class="col-12">
+            <small><strong>Nome:</strong></small>
             <input class="form-control" type="text" name="filtro_nome" id="filtro_nome" placeholder="Digite o nome da chave">
           </div>
         </div>
@@ -50,10 +51,13 @@ include "../config/header/header.php";
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
-          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> | Usuário: <?= $chave['usuario'] ?> </small> </div>
+          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> </small> </div>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
           <?php if ($chave['observacao'] != NULL) { ?>
-          <div><b><small>Observação de registro: <?= $chave['observacao'] ?> </small></b> </div>
+          <div><small> Usuário: <?= $chave['usuario'] ?> </small> </div>
+          <?php } ?>
+          <?php if ($chave['observacao'] != NULL) { ?>
+          <div><b><small>Observação de Registro: </b><?= $chave['observacao'] ?> </small> </div>
           <?php } ?>
         </div>
       </div>

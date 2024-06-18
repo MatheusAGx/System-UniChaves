@@ -2,7 +2,7 @@
 <?php
 include "../config/config.php";
 
-$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_usuario) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ";
+$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ";
 
 
 if (isset($_POST['filtrar'])) 

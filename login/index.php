@@ -8,7 +8,7 @@ if (isset($_POST["acessar"])) {
     $senha = sha1($senhainicial);
     
 
-    $q_busca_login = "SELECT * FROM usuarios WHERE cpf = '$username' AND senha = '$senha'";
+    $q_busca_login = "SELECT * FROM usuarios WHERE (cpf = '$username' OR cnpj = '$username') AND senha = '$senha'";
     $busca_login = $conn->query($q_busca_login);
 
     $quantidade = $busca_login->num_rows;
