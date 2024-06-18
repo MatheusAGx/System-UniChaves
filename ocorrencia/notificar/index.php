@@ -19,6 +19,10 @@ if (isset($_POST['enviarEmail'])) {
     $busca_email = $conn->query($q_busca_email);
     $email = $busca_email->fetch_object();
 
+    /*$q_busca_ocorrencia = "SELECT * FROM ocorrencia WHERE id = '$id'";
+    $busca_ocorrencia = $conn->query($q_busca_ocorrencia);
+    $ocorrencia_d = $busca_ocorrencia->fetch_object();*/
+
     $mail = new PHPMailer(true);
 
     try {
@@ -46,11 +50,11 @@ if (isset($_POST['enviarEmail'])) {
         // Conteúdo
         $mail->isHTML(true);                                        // Definir e-mail formato para HTML
         $mail->Subject = 'OCORRENCIA';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+        $mail->Body    = 'Ola '.$email->nome.'! Gostariamos de notifica-lo que sera necessario devolver sua chave!';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        header ('Location: ./');
+        header ('Location: ../');
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }

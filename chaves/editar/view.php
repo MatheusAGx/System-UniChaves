@@ -28,7 +28,7 @@
 </div>
 <div class="card my-2" style="width: full;">
     <div class="card-body">
-        <h3 class="card-title">Cadastro de Chaves</h3>
+        <h3 class="card-title">Edição de Chave</h3>
         <form action="#" method="post" id="reg_chave" name="reg_chave" enctype="multipart/form-data">
         <?php while($chave = $busca_chave->fetch_object()) { ?>
             <div class="row p-2" >
@@ -53,7 +53,7 @@
                     <textarea class="form-control" aria-label="Descricao" name="descricao" rows="3" cols="50"><?=$chave->descricao ?></textarea>
                 </div>
             </div>
-            <button class="btn btn-primary" name="cadastrar" value="cadastrar">Cadastrar</a>
+            <button class="btn btn-primary" name="cadastrar" value="cadastrar">Salvar</a>
         <?php } ?>
         </form>
         

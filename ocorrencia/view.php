@@ -16,7 +16,7 @@
     <div class="card card-hover my-2">
       <div class="card-header" style="align-items: center;">
         <strong><?= $ocorrencia['id'] ?></strong>
-        <a class="btn btn-outline-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./notificar/?id=<?= $ocorrencia['id'] ?>"> Notificar </a>
+        <a class="btn btn-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./notificar/?id=<?= $ocorrencia['id'] ?>"> Notificar </a>
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">

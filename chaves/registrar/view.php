@@ -52,7 +52,7 @@
                         <?php }?>
                     </select>
                 </div>
-                <div class="col-2">
+                <div class="col-6">
                     <h6>Data de Devolução:</h6>
                     <input class="form-control" type="date" name="data_devolucao" id="data_devolucao">
                 </div>
@@ -64,6 +64,7 @@
                     <textarea class="form-control" aria-label="observacoes" name="observacoes" rows="10" cols="50"></textarea>
                 </div>
             </div>
+            
 
             <div class="row p-2">
                 <div class="col-12">

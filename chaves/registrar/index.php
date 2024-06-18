@@ -15,19 +15,29 @@ if(isset($_POST['registrar'])) {
     $observacoes = $conn->real_escape_string($_POST['observacoes']);
     $id_chave = $conn->real_escape_string($_POST['id_chave']);
 
-    $q_insert = "INSERT INTO registros (id_usuario, id_chave, data_devolucao, data_registro, dias, observacao, id_instituicao) VALUES ('$usuario', '$id_chave', '$data_devolucao', CURRENT_TIMESTAMP, 0, '$observacoes', '$instituicao')";
-    $insert = $conn->query($q_insert);
+    $q_busca_registro = "SELECT id_usuario, id_chave, data_devolucao FROM registros WHERE id_usuario = '$usuario' AND id_chave = '$id_chave'";
+    $busca_registro = $conn->query($q_busca_registro);
 
-        if ($insert) {
-            $sucesso = true;
-            $msg = "Operação realizada com sucesso!";
-        } else {
-            $erro = true;
-            $msg = "Erro na operação! Por favor reveja as informações";
-        }
+    if (empty($busca_registro)) {
 
-    $q_update = "UPDATE chave SET id_status = 2 WHERE id = '$id'";
-    $update = $conn->query($q_update);
+        $q_insert = "INSERT INTO registros (id_usuario, id_chave, data_devolucao, data_registro, dias, observacao, id_instituicao) VALUES ('$usuario', '$id_chave', '$data_devolucao', CURRENT_TIMESTAMP, 0, '$observacoes', '$instituicao')";
+        $insert = $conn->query($q_insert);
+
+            if ($insert) {
+                $sucesso = true;
+                $msg = "Operação realizada com sucesso!";
+            } else {
+                $erro = true;
+                $msg = "Erro na operação! Por favor reveja as informações";
+            }
+
+        $q_update = "UPDATE chave SET id_status = 2, id_registro = id WHERE id = '$id'";
+        $update = $conn->query($q_update);
+
+    } else {
+        $erro = true;
+        $msg = "Já existe uma chave registrada a esse usuário!";
+    }
 }
 
 $q_buscar_usuario = "SELECT id, nome FROM usuarios";
@@ -39,7 +49,7 @@ $busca_instituicao = $conn->query($q_busca_intituicao);
 $q_busca_chave = "SELECT id FROM chave WHERE id = '$id'";
 $busca_chave = $conn->query($q_busca_chave);
 
-$q_busca_data = "SELECT data_devolucao FROM registros WHERE id = '$id'";
+/*$q_busca_data = "SELECT data_devolucao FROM registros WHERE id = '$id'";
 $busca_data = $conn->query($q_busca_data);
 $data = $busca_data->fetch_object();
 $data_atual = date('Y-m-d H-i-s');
@@ -56,6 +66,6 @@ if ($data->data_devolucao == $data_atual) {
         $q_update = "UPDATE chave SET contador '$cont_mais' WHERE id = '$id'";
         $update = $conn->query($q_update);
     }
-}
+} */
 
 include "view.php";

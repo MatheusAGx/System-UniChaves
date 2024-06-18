@@ -14,6 +14,7 @@ include "../config/header/header.php";
 <!-- FILTROS -->
   <div class="card my-2">
     <div class="card-body">
+    <h6 class="p-1">Filtros</h6>
       <form action="" method="post" id="formFiltro">
         <div class="row">
           <div class="col-12">
@@ -43,14 +44,17 @@ include "../config/header/header.php";
          if ($chave['tipo'] == "Ocupada") { echo "background-color: red;";} 
          if ($chave['tipo'] == "Reservada") { echo "background-color: orange;";} 
          ?>"></button><strong><?= $chave['nome'] ?></strong>
-        <a class="btn btn-outline-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a>
-        <a class="btn btn-outline-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $chave['id'] ?>"> Deletar </a>
-        <a class="btn btn-outline-warning btn-sm" style="float: right;" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a>
+        <a class="btn btn-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a>
+        <a class="btn btn-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $chave['id'] ?>"> Deletar </a>
+        <a class="btn btn-info btn-sm" style="float: right;" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a>
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
           <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> | Usuário: <?= $chave['usuario'] ?> </small> </div>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
+          <?php if ($chave['observacao'] != NULL) { ?>
+          <div><b><small>Observação de registro: <?= $chave['observacao'] ?> </small></b> </div>
+          <?php } ?>
         </div>
       </div>
     </div>

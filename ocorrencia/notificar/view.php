@@ -84,6 +84,12 @@
             </div>
         </div>
 
+        <script>
+        document.getElementById('ocorrencia').addEventListener('focus', function() {
+            this.setSelectionRange(0, 0);
+        });
+    </script>
+
 <?php 
     include "../../config/footer/footer.php";
 ?>
