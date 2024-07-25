@@ -179,6 +179,8 @@ if (!isset($_SESSION))
 
 <body>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <div class="wrapper">
     <aside id="sidebar">
       <div class="d-flex">
@@ -191,7 +193,7 @@ if (!isset($_SESSION))
       </div>
       <ul class="sidebar-nav">
         <li class="sidebar-item">
-          <a href="#" class="sidebar-link">
+          <a href="/php/dashboard" class="sidebar-link">
           <i class="bi bi-bar-chart"></i>
             <span>Dashboard</span>
           </a>

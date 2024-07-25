@@ -31,24 +31,12 @@
     <div class="card-body">
         <form name="registroForm" id="registroForm" method="POST" action="">
             <div class="row p-2">
-                <div class="col-12">
+                <div class="col-6">
                     <h6>Selecione o usuário:</h6>
                     <select class="form-select" name="id_usuario" id="id_usuario">
                         <option value="0" selected></option>
                         <?php while($usuario = $busca_usuario->fetch_object()) { ?>
                         <option value=<?=$usuario->id?>><?=$usuario->nome?></option>
-                        <?php }?>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row p-2">
-                <div class="col-6">
-                    <h6>Selecione a instituicao:</h6>
-                    <select class="form-select" name="instituicao" id="instituicao">
-                        <option value="0" selected></option>
-                        <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
-                        <option value=<?=$instituicao->id?>><?=$instituicao->descricao?></option>
                         <?php }?>
                     </select>
                 </div>

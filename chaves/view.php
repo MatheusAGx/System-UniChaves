@@ -55,8 +55,6 @@ include "../config/header/header.php";
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
           <?php if ($chave['observacao'] != NULL) { ?>
           <div><small> Usuário: <?= $chave['usuario'] ?> </small> </div>
-          <?php } ?>
-          <?php if ($chave['observacao'] != NULL) { ?>
           <div><b><small>Observação de Registro: </b><?= $chave['observacao'] ?> </small> </div>
           <?php } ?>
         </div>
