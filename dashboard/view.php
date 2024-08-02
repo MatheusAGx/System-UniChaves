@@ -3,26 +3,58 @@
 ?>
 <div class="container-fluid mb-3">
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
             <div class="card">
-                <div class="card-body" style="width: 600px;">
-                    <canvas id="acquisitions">
-                    </canvas>
+                <div class="card-body" style="width: 30vw;">
+                    <h6><b>REGISTROS</b></h6>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Total</th>
+                                <th scope="col">Mês</th>
+                                <th scope="col">Dia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $r_total['COUNT(id)']; ?></td>
+                                <td><?php echo $r_mes['COUNT(id)']; ?></td>
+                                <td><?php echo $r_dia['COUNT(id)']; ?></td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
             <div class="card">
-                <div class="card-body" style="width: 600px;">
-                    <canvas id="acquisitions">
-                    </canvas>
+                <div class="card-body" style="width: 30vw;">
+                <h6><b>OCORRENCIAS</b></h6>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Total</th>
+                                <th scope="col">Mês</th>
+                                <th scope="col">Dia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $o_total['COUNT(id)']; ?></td>
+                                <td><?php echo $o_mes['COUNT(id)']; ?></td>
+                                <td><?php echo $o_dia['COUNT(id)']; ?></td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
+<!-- <script>
 
 
 
@@ -70,7 +102,7 @@
 
 
 
-</script>
+</script> -->
 
 <?php 
     include "../config/footer/footer.php";
