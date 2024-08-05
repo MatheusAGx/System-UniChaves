@@ -217,7 +217,7 @@ if (!isset($_SESSION))
           </a>
         </li>
         <li class="sidebar-item">
-          <a href="/php/relatorio" class="sidebar-link">
+          <a href="/php/relatorios" class="sidebar-link">
           <i class="bi bi-clipboard"></i>
             <span>Relatórios</span>
           </a>

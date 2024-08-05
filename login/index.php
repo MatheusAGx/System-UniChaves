@@ -24,7 +24,7 @@ if (isset($_POST["acessar"])) {
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['nome'] = $usuario['nome'];
 
-        header("Location: ../usuario/index.php");
+        header("Location: ../dashboard");
     } else {
         echo "Falha ao logar! Email ou senha incorretos!";
     }
