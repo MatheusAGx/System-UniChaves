@@ -47,16 +47,13 @@ include "../config/header/header.php";
          ?>"></button><strong><?= $chave['nome'] ?></strong>
         <a class="btn btn-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a>
         <a class="btn btn-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $chave['id'] ?>"> Deletar </a>
-        <a class="btn btn-info btn-sm" style="float: right;" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a>
+        <a class="btn btn-info btn-sm" style="float: right; margin-left: 0.5vw" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a>
+        <a class="btn btn-warning btn-sm" style="float: right;" href="./detalhes/?id=<?= $chave['id'] ?>"> Detalhes </a>
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
           <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> </small> </div>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
-          <?php if ($chave['observacao'] != NULL) { ?>
-          <div><small> Usuário: <?= $chave['usuario'] ?> </small> </div>
-          <div><b><small>Observação de Registro: </b><?= $chave['observacao'] ?> </small> </div>
-          <?php } ?>
         </div>
       </div>
     </div>
