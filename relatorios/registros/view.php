@@ -1,12 +1,12 @@
 <?php 
-    include "../config/header/header.php";
+    include "../../config/header/header.php";
 ?>
     <div class="card my-2">
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <a class="btn btn-primary" href="./registros">Registros</a>
-                    <a class="btn btn-primary" href="./ocorrencias">Ocorrências</a>
+                    <a class="btn btn-primary" href="../">Geral</a>
+                    <a class="btn btn-primary" href="../ocorrencias">Ocorrências</a>
                 </div>
             </div>
         </div>  
@@ -80,5 +80,5 @@
     </nav>
 
 <?php 
-    include "../config/footer/footer.php";
+    include "../../config/footer/footer.php";
 ?>

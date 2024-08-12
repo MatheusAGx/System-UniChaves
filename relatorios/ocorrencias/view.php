@@ -1,12 +1,12 @@
 <?php 
-    include "../config/header/header.php";
+    include "../../config/header/header.php";
 ?>
     <div class="card my-2">
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <a class="btn btn-primary" href="./registros">Registros</a>
-                    <a class="btn btn-primary" href="./ocorrencias">Ocorrências</a>
+                    <a class="btn btn-primary" href="../">Geral</a>
+                    <a class="btn btn-primary" href="../registros">Registros</a>
                 </div>
             </div>
         </div>  
@@ -54,17 +54,17 @@
                             <tr>
                                 <th scope="col">Chave</th>
                                 <th scope="col">Usuário</th>
-                                <th scope="col">Data de Devolução</th>
-                                <th scope="col">Instituicao</th>
+                                <th scope="col">Data da Ocorrência</th>
+                                <th scope="col">Hora de Ocorrência</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($pagination['results'] as $registros) : ?>
+                        <?php foreach ($pagination['results'] as $ocorrencias) : ?>
                             <tr>
-                                <th scope="row"><?= $registros['chave'] ?></th>
-                                <td><?= $registros['usuario'] ?></td>
-                                <td><?= $registros['data_dev'] ?></td>
-                                <td><?= $registros['instituicao'] ?></td>
+                                <th scope="row"><?= $ocorrencias['chave'] ?></th>
+                                <td><?= $ocorrencias['usuario'] ?></td>
+                                <td><?= $ocorrencias['data_oc'] ?></td>
+                                <td><?= $ocorrencias['hora'] ?></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -80,5 +80,5 @@
     </nav>
 
 <?php 
-    include "../config/footer/footer.php";
+    include "../../config/footer/footer.php";
 ?>

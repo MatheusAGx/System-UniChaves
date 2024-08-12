@@ -54,7 +54,7 @@ include "../config/header/header.php";
       <div class="card-header" style="align-items: center;">
         <strong><?= $usuario['nome'] ?></strong>
         <a class="btn btn-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $usuario['id'] ?>"> Deletar </a>
-        <a class="btn btn-info btn-sm" style="float: right;" href="./editar/?id=<?= $usuario['id'] ?>"> Editar </a>
+        <a class="btn btn-warning btn-sm" style="float: right;" href="./editar/?id=<?= $usuario['id'] ?>"> Editar </a>
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">

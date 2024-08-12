@@ -1,9 +1,8 @@
 
-    <footer id="footer-pag" style="display: flex; justify-content: center; align-items: center; width:100%; height: 4.3vh;">
-        <h6>Desenvolvido por Matheus Augusto Guedes e Gustavo Cleber Pardim. <small><a href="../termos" style="float:right; margin-left: 1vw;">Política de Privacidade e Termos de Uso </a></h6>
-    </footer>
+        <footer id="footer-pag" style="display: flex; justify-content: center; align-items: center; width:100%; height: 4.3vh;">
+            <h6>Desenvolvido por Matheus Augusto Guedes e Gustavo Cleber Pardim. <small><a href="../termos" style="float:right; margin-left: 1vw;">Política de Privacidade e Termos de Uso </a></h6>
+        </footer>
     </div>
-</div>
 </body>
 <script>
     const hamBurger = document.querySelector(".toggle-btn");

@@ -1,5 +1,5 @@
 <?php
-include "../config/config.php";
+include "../../config/config.php";
 
 $q_busca_registro = "SELECT DATE_FORMAT(data_devolucao, '%d/%m/%Y') as data_dev , (SELECT descricao FROM chave_instituicao WHERE id=id_instituicao) as instituicao, (SELECT nome FROM chave WHERE id = id_chave) as chave, (SELECT nome FROM usuarios WHERE id = id_usuario) as usuario FROM registros ";
 $q_busca_instituicao = "SELECT * FROM chave_instituicao";
