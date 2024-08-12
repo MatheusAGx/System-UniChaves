@@ -47,37 +47,22 @@
     <div class="card my-2">
         <div class="card-body">
             <div class="row">
-            <h4 class="mb-3"><b>Registros</b></h4>
-                <div class="col-12">
-                    <table class="table table-bordered text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Chave</th>
-                                <th scope="col">Usuário</th>
-                                <th scope="col">Data de Devolução</th>
-                                <th scope="col">Instituicao</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($pagination['results'] as $registros) : ?>
-                            <tr>
-                                <th scope="row"><?= $registros['chave'] ?></th>
-                                <td><?= $registros['usuario'] ?></td>
-                                <td><?= $registros['data_dev'] ?></td>
-                                <td><?= $registros['instituicao'] ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                    </table>
+            <h4 class="mb-3"><b>Status Geral</b></h4>
+            <?php while ($chave = $busca_chave->fetch_object()) { ?>
+                <div class="col-3 my-2 text-center">
+                    <div class="card">
+                        <div class="card-body" style="<?php if ($chave->id_status == 2) {echo 'background-color: red;';} else {echo 'background-color: green;';} ?>">
+                        <h6><?=$chave->nome ?></h6>
+                        <div>
+                            <small><?= $chave->instituicao ?></small>
+                        </div>
+                        </div>
+                    </div>
                 </div>
+                <?php } ?>
             </div>
         </div>  
     </div>
-    <nav aria-label="...">
-        <ul class="pagination pagination-sm">
-        <?= $pagination['pagination'] ?>
-        </ul>
-    </nav>
 
 <?php 
     include "../config/footer/footer.php";

@@ -2,6 +2,10 @@
 include "../../config/config.php";
 
 $q_busca_ocorrencia = "SELECT DATE_FORMAT(data_ocorrencia, '%d/%m/%Y') as data_oc , TIME_FORMAT(hora_ocorrencia, '%H:%i') as hora, (SELECT nome FROM chave WHERE id = id_chave) as chave, (SELECT nome FROM usuarios WHERE id = id_usuario) as usuario FROM ocorrencia ";
+$q_busca_chave = "SELECT * FROM chave";
+$busca_chave = $conn->query($q_busca_chave);
+$q_busca_usuario ="SELECT * FROM usuarios";
+$busca_usuario = $conn->query($q_busca_usuario);
 $q_busca_instituicao = "SELECT * FROM chave_instituicao";
 $busca_instituicao = $conn->query($q_busca_instituicao);
 
@@ -13,17 +17,17 @@ if (isset($_POST['filtrar']))
 
 
     if (!empty($chave)) {
-        $q_busca_ocorrencia .= "WHERE chave LIKE '%$chave%' ";
+        $q_busca_ocorrencia .= "WHERE id_chave = '$chave' ";
     
     } else if (!empty($usuario)) {
-        $q_busca_ocorrencia .= "WHERE usuario LIKE '%$usuario%' ";
+        $q_busca_ocorrencia .= "WHERE id_usuario = '$usuario' ";
 
     } else if (!empty($data_dev)) {
-        $q_busca_ocorrencia .= "WHERE data_devolucao = '$data_dev' ";
+        $q_busca_ocorrencia .= "WHERE data_ocorrencia = '$data_dev' ";
 
     }
 
-    $q_busca_ocorrencia .= "ORDER BY data_devolucao DESC";
+    $q_busca_ocorrencia .= "ORDER BY data_ocorrencia DESC";
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $perPage = 15;

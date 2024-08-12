@@ -19,15 +19,25 @@
                 <div class="row">
                     <div class="col-4">
                         <small><strong>Chave:</strong></small>
-                        <input class="form-control" type="text" name="filtro_chave" id="filtro_chave" placeholder="Digite o nome da chave">
+                        <select class="form-select" name="filtro_chave" id="filtro_chave">
+                            <option value="0" selected></option>
+                            <?php while ($chave = $busca_chave->fetch_object()) { ?>
+                            <option value="<?=$chave->id?>"><?=$chave->nome?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="col-4">
                         <small><strong>Usuario:</strong></small>
-                        <input class="form-control" type="text" name="filtro_usuario" id="filtro_usuario" placeholder="Digite o nome do usuário">
+                        <select class="form-select" name="filtro_usuario" id="filtro_usuario">
+                            <option value="0" selected></option>
+                            <?php while ($usuario = $busca_usuario->fetch_object()) { ?>
+                            <option value="<?=$usuario->id?>"><?=$usuario->nome?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="col-4">
                         <small><strong>Data de Devolução:</strong></small>
-                        <input class="form-control" type="date" name="filtro_data_dev" id="filtro_data_dev">
+                        <input class="form-control" type="date" name="filtro_data_oc" id="filtro_data_oc">
                     </div>
                 </div>
                 <div class="row">
