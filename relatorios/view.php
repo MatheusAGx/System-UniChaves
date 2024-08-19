@@ -12,7 +12,7 @@
         </div>  
     </div>
 
-    <div class="card my-2">
+    <!-- <div class="card my-2">
         <div class="card-body">
             <h5>Filtros</h5>
             <form action="" method="post" id="formFiltro">
@@ -42,16 +42,16 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 
     <div class="card my-2">
         <div class="card-body">
             <div class="row">
             <h4 class="mb-3"><b>Status Geral</b></h4>
             <?php while ($chave = $busca_chave->fetch_object()) { ?>
-                <div class="col-3 my-2 text-center">
+                <div class="col-4 my-2 text-center">
                     <div class="card">
-                        <div class="card-body" style="<?php if ($chave->id_status == 2) {echo 'background-color: red;';} else {echo 'background-color: green;';} ?>">
+                        <div class="card-body" style="border-radius: 5px;<?php if ($chave->id_status == 2) {echo 'background-color: rgb(255, 25, 25); color: white;';} else {echo 'background-color: rgb(29, 214, 36);';} ?>">
                         <h6><?=$chave->nome ?></h6>
                         <div>
                             <small><?= $chave->instituicao ?></small>
