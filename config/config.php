@@ -4,6 +4,8 @@ $username = "cl203168";
 $password = "cl*15061998";
 $database = "cl203168";
 
+session_start();
+
 // Criando a conexão
 $conn = new mysqli($servername, $username, $password, $database);
 

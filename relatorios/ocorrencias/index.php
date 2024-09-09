@@ -41,4 +41,7 @@ else
     $pagination = paginate($conn, 'chave', $page, $perPage, $q_busca_ocorrencia);
 }
 
+ 
 include "view.php";
+?>
+

@@ -16,10 +16,7 @@ if (isset($_POST["acessar"])) {
    
     if ($quantidade > 0) {
         $usuario = $busca_login->fetch_assoc();
-
-        if (!isset($_SESSION)) {
-            session_start();
-        }
+        session_start();
 
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['nome'] = $usuario['nome'];
