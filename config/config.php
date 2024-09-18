@@ -56,3 +56,4 @@ function paginate($mysqli, $table, $page, $perPage, $query)
 $sucesso = false;
 $erro = false;
 $msg = '';
+
