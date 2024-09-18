@@ -31,8 +31,8 @@
 
             // Conteúdo
             $mail->isHTML(true);                                        // Definir e-mail formato para HTML
-            $mail->Subject = 'Teste';
-            $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+            $mail->Subject = 'Notificação de ocorrência';
+            $mail->Body    = 'Este e-mail tem como finalidade te informar sobre uma ocorrência que foi criada em nosso sistema. Por gentileza não responder este email!';
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();

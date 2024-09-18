@@ -31,8 +31,8 @@
         // Conteúdo
         $mail->isHTML(true);                                        // Definir e-mail formato para HTML
         $mail->Subject = 'Teste';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Body    = 'Olá! Por favor acesse o sistema do UniChaves, pois uma ocorrência foi registrada em seu nome!';
+        $mail->AltBody = 'Este e-mail não recebe respostas!';
 
         $mail->send();
         echo 'Message has been sent';

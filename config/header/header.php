@@ -276,7 +276,7 @@ if (!isset($_SESSION))
               </button>
               <?= $_SESSION['nome'] ?>
               <button class="btn btn-light" id="logout">
-                <a href="../login" onclick="logout()"><i class="bi bi-person-circle"></i></a>
+                <a href="../logout"><i class="bi bi-person-circle"></i></a>
               </button> 
             </span>
           </div>
