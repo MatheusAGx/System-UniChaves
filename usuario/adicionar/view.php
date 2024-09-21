@@ -120,11 +120,11 @@
                 <h6>Cidade: </h6>
                 <input id="cidade" name="cidade" type="text" class="form-control" placeholder="Cidade" aria-label="Cidade">
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 <h6>Complemento: </h6>
                 <input id="complemento" name="complemento" type="text" class="form-control" placeholder="Complemento" aria-label="Complemento do endereço">
             </div>
-            <div class="col-1">
+        <!--    <div class="col-1">
                 <h6>Estado: </h6>
                 <select class="form-control" id="uf" name="uf">
                     <option value="AC">AC</option>
@@ -155,14 +155,14 @@
                     <option value="SE">SE</option>
                     <option value="TO">TO</option>
                 </select>
-            </div>
+            </div> -->
         </div>
             
         <button name="cadastrar" id="cadastrar" class="btn btn-primary mt-2">Cadastrar</a>
     </form>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script>
     
     function validaSenha() {
@@ -343,6 +343,35 @@
             msg.innerHTML = "Telefone inválido!";
         }
     }
+
+    $("#cep").blur(function(){
+        // Remove tudo o que não é número para fazer a pesquisa
+        var cep = this.value.replace(/[^0-9]/, "");
+        
+        // Validação do CEP; caso o CEP não possua 8 números, então cancela
+        // a consulta
+        if(cep.length != 8){
+            return false;
+        }
+        
+        // A url de pesquisa consiste no endereço do webservice + o cep que
+        // o usuário informou + o tipo de retorno desejado (entre "json",
+        // "jsonp", "xml", "piped" ou "querty")
+        var url = "https://viacep.com.br/ws/"+cep+"/json/";
+        
+        // Faz a pesquisa do CEP, tratando o retorno com try/catch para que
+        // caso ocorra algum erro (o cep pode não existir, por exemplo) a
+        // usabilidade não seja afetada, assim o usuário pode continuar//
+        // preenchendo os campos normalmente
+        $.getJSON(url, function(dadosRetorno){
+            try{
+                // Preenche os campos de acordo com o retorno da pesquisa
+                $("#endereco").val(dadosRetorno.logradouro);
+                $("#bairro").val(dadosRetorno.bairro);
+                $("#cidade").val(dadosRetorno.localidade);
+            }catch(ex){}
+        });
+    });
 
 </script>
 

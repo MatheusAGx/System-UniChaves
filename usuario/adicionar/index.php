@@ -1,6 +1,10 @@
 <?php
 include "../../config/config.php";
 
+$valorRua = "";
+$valorCidade = "";
+$valorBairro = "";
+
 //VALIDAÇÕES ---------------------------------------------------------------
 function validarCPF($cpf) {
     $cpf = preg_replace('/[^0-9]/', '', $cpf);
