@@ -67,9 +67,7 @@
                         <div class="row p-2">
                             <div class="col-12 col-sm-12">
                                 <h6>Descreva a ocorrência:</h6>
-                                <textarea type="text" class="form-control" id="ocorrencia" name="ocorrencia" rows="5">
-                                    <?=$dados->descricao?>
-                                </textarea>
+                                <textarea type="text" class="form-control" id="ocorrencia" name="ocorrencia" rows="5"><?=$dados->descricao?></textarea>
                             </div>
                         </div>
 

@@ -49,9 +49,23 @@ if (isset($_POST['enviarEmail'])) {
 
         // Conteúdo
         $mail->isHTML(true);                                        // Definir e-mail formato para HTML
+        $mail->SetLanguage("br");
         $mail->Subject = 'OCORRENCIA';
-        $mail->Body    = 'Ola '.$email->nome.'! Gostariamos de notifica-lo que sera necessario devolver sua chave!';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $body = '<h3 style="text-align: center;">
+                    Ola <strong>'.$email->nome.'</strong>!
+                </h3>
+                <br>
+                <h4 style="text-align: center;">
+                    Gostariamos de notifica-lo que uma ocorrência foi aberta em nosso sistema!
+                </h4>
+                <br>
+                <h6 style="">
+                    <i>
+                        Este e-mail não recebe respostas, portanto regularize sua chave junto da secretaria da sua unidade!
+                    </i>
+                </h6>';
+        $mail->Body = utf8_decode($body);
+        //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
         header ('Location: ../');

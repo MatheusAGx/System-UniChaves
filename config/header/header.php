@@ -1,6 +1,6 @@
 <?php
 if (empty($_SESSION)){
-  header("Location: ../login/index.php");
+  header("Location: ../index.php");
 }
 ?>
 

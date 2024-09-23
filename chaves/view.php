@@ -45,15 +45,20 @@ include "../config/header/header.php";
          if ($chave['tipo'] == "Ocupada") { echo "background-color: red;";} 
          if ($chave['tipo'] == "Reservada") { echo "background-color: orange;";} 
          ?>"></button><strong><?= $chave['nome'] ?></strong>
-        <?php if ($chave['tipo'] == "Ocupada") { ?> <a class="btn btn-info btn-sm" style="float: right; margin-left: 0.5vw" href="./detalhes/?id=<?= $chave['id'] ?>"> Detalhes </a> <?php } ?>
-        <a class="btn btn-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a>
+        <?php if ($chave['tipo'] == "Ocupada") { ?>
+          <a class="btn btn-warning btn-sm" style="float: right; margin-left: 0.5vw" href="./detalhes/?id=<?= $chave['id'] ?>"> Devolver </a> 
+        <?php } else { ?>
+          <a class="btn btn-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a> 
+        <?php } ?>
         <a class="btn btn-danger btn-sm" style="float: right; margin-left: 0.5vw" href="./deletar/?id=<?= $chave['id'] ?>"> Deletar </a>
-        <a class="btn btn-warning btn-sm" style="float: right;" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a> 
+        <a class="btn btn-primary btn-sm" style="float: right;" href="./editar/?id=<?= $chave['id'] ?>"> Editar </a> 
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
           <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> </small> </div>
+          <?php if($chave['descricao'] != null) { ?>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
+          <?php } ?>
         </div>
       </div>
     </div>

@@ -82,11 +82,11 @@
                 </div>
             </div>
         </div> 
-        <div class="col-md-12 head m-2">
+        <!-- <div class="col-md-12 head m-2">
             <div class="float-right">
                 <a href="export.php" class="btn btn-success"><i class="dwn"></i> Export</a>
             </div>
-        </div> 
+        </div>  -->
     </div>
     <nav aria-label="...">
         <ul class="pagination pagination-sm">
