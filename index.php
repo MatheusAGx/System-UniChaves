@@ -1,5 +1,5 @@
 <?php
-include "../config/config.php";
+include "config/config.php";
 
 if (isset($_POST["acessar"])) {
     $username = $_POST["username"];
@@ -21,7 +21,7 @@ if (isset($_POST["acessar"])) {
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['nome'] = $usuario['nome'];
 
-        header("Location: ../dashboard");
+        header("Location: dashboard/");
     } else {
         echo "Falha ao logar! Email ou senha incorretos!";
     }
