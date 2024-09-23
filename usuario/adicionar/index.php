@@ -114,7 +114,7 @@ if (isset($_POST['cadastrar'])) {
     $bairro = $conn->real_escape_string($_POST['bairro']);
     $complemento = $conn->real_escape_string($_POST['complemento']);
     $cidade = $conn->real_escape_string($_POST['cidade']);
-    $uf = $conn->real_escape_string($_POST['uf']);
+   // $uf = $conn->real_escape_string($_POST['uf']);
     $tipo = $conn->real_escape_string($_POST['tipo']);
     $id_instituicao = $conn->real_escape_string($_POST['instituicao']);
     $senha = sha1($senhas);

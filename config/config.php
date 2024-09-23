@@ -27,7 +27,7 @@ function paginate($mysqli, $table, $page, $perPage, $query)
     $offset = ($page - 1) * $perPage;
 
     // Recupera os registros da página atual
-    $stmt = $mysqli->prepare($query . " LIMIT ?, ?");
+    $stmt = $mysqli->prepare($query . " LIMIT ?, ? ");
     $stmt->bind_param("ii", $offset, $perPage);
     $stmt->execute();
     $result = $stmt->get_result();

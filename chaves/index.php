@@ -2,18 +2,18 @@
 <?php
 include "../config/config.php";
 
-$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ";
+$q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ORDER BY nome ASC ";
 
 
 if (isset($_POST['filtrar'])) 
 {
     $nome = $conn->real_escape_string($_POST['filtro_nome']);
-
-    $q_busca_chave .= "WHERE nome LIKE '%$nome%' ";
+    $q_busca_chaves = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ";
+    $q_busca_chaves .= "WHERE nome LIKE '%$nome%' ORDER BY nome ASC ";
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $perPage = 10;
-    $pagination = paginate($conn, 'chave', $page, $perPage, $q_busca_chave);
+    $pagination = paginate($conn, 'chave', $page, $perPage, $q_busca_chaves);
 
 } else {
     

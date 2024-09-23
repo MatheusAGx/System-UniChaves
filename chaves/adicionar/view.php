@@ -37,7 +37,7 @@
                     <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome" aria-label="Nome" required>
                 </div>
                 <div class="col-6">
-                    <h6>Instituicao </h6>
+                    <h6>Instituição: </h6>
                     <select name="instituicao" id="instituicao" class="form-select">
                         <option value="0" selected></option>
                         <?php while($instituicao = $busca_instituicao->fetch_object()) { ?>
