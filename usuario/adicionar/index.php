@@ -103,7 +103,7 @@ if (isset($_POST['cadastrar'])) {
     $nome = $conn->real_escape_string($_POST['nome']);
     $instituicao = $conn->real_escape_string($_POST['instituicao']);
     $senhas = $conn->real_escape_string($_POST['senha']);
-    $confirm_senha = $conn->real_escape_string($_POST['confirma-senha']);
+    $confirma_senha = $conn->real_escape_string($_POST['confirma-senha']);
     $cpf = $conn->real_escape_string(preg_replace('/[^0-9]/', '', $_POST['cpf']));
     $cnpj = $conn->real_escape_string(preg_replace('/[^0-9]/', '', $_POST['cnpj']));
     $email = $conn->real_escape_string($_POST['email']);
@@ -114,38 +114,46 @@ if (isset($_POST['cadastrar'])) {
     $bairro = $conn->real_escape_string($_POST['bairro']);
     $complemento = $conn->real_escape_string($_POST['complemento']);
     $cidade = $conn->real_escape_string($_POST['cidade']);
-   // $uf = $conn->real_escape_string($_POST['uf']);
     $tipo = $conn->real_escape_string($_POST['tipo']);
     $id_instituicao = $conn->real_escape_string($_POST['instituicao']);
-    $senha = sha1($senhas);
-
-    $q_insert_usuario = "INSERT INTO cl203168.usuarios (nome, senha, cpf, cnpj, email, telefone, endereco, bairro, cep, numero, cidade, uf, id_instituicao, id_usuario_tipo) VALUES ('$nome', '$senha', '$cpf', '$cnpj', '$email', '$tel', '$endereco', '$bairro', '$cep', '$numero_casa', '$cidade', '$uf', '$id_instituicao', '$tipo')";
-
-    if (validarCPF($cpf) == false && !empty($cpf))
-    {
+    if (strlen($senhas) < 8) {
         $erro = true;
-        $msg = "O CPF não é válido!";
-    } else if (validarCNPJ($cnpj) == false && !empty($cnpj)) {
+        $msg = "Senha inválida! Deve conter 8 caractéres";
+    } else if ($senhas != $confirma_senha) {
         $erro = true;
-        $msg = "O CNPJ não é válido!";
-    } else if (validarEmail($email) == false) {
-        $erro = true;
-        $msg = "O Email não é válido!";
-    } else if (validarTelefone($tel) == false) {
-        $erro = true;
-        $msg = "O telefone não é válido!";
+        $msg = "As senhas devem ser iguais!";
     } else {
+        $senha = sha1($senhas);
+        $confirma_senha = sha1($confirma_senha);
 
-        $insert = $conn->query($q_insert_usuario);
+        $q_insert_usuario = "INSERT INTO cl203168.usuarios (nome, senha, cpf, cnpj, email, telefone, endereco, bairro, cep, numero, cidade, id_instituicao, id_usuario_tipo) VALUES ('$nome', '$senha', '$cpf', '$cnpj', '$email', '$tel', '$endereco', '$bairro', '$cep', '$numero_casa', '$cidade', '$id_instituicao', '$tipo')";
 
-        if ($insert) {
-            $sucesso = true;
-            $msg = "Operação realizada com sucesso!";
-        } else {
+        if (validarCPF($cpf) == false && !empty($cpf))
+        {
             $erro = true;
-            $msg = "Erro na operação! Por favor reveja as informações";
-        }
+            $msg = "O CPF não é válido!";
+        } else if (validarCNPJ($cnpj) == false && !empty($cnpj)) {
+            $erro = true;
+            $msg = "O CNPJ não é válido!";
+        } else if (validarEmail($email) == false) {
+            $erro = true;
+            $msg = "O Email não é válido!";
+        } else if (validarTelefone($tel) == false) {
+            $erro = true;
+            $msg = "O telefone não é válido!";
+        } else {
 
+            $insert = $conn->query($q_insert_usuario);
+
+            if ($insert) {
+                $sucesso = true;
+                $msg = "Operação realizada com sucesso!";
+            } else {
+                $erro = true;
+                $msg = "Erro na operação! Por favor reveja as informações";
+            }
+
+        }
     }
 
 }

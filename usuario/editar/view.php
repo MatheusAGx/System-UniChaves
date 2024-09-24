@@ -117,11 +117,11 @@
                 <h6>Cidade: </h6>
                 <input id="cidade" name="cidade" type="text" class="form-control" placeholder="Cidade" aria-label="Cidade" value="<?=$usuario->cidade?>">
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 <h6>Complemento: </h6>
                 <input id="complemento" name="complemento" type="text" class="form-control" placeholder="Complemento" aria-label="Complemento do endereço" value="<?=$usuario->complemento?>"> 
             </div>
-            <div class="col-1">
+            <!-- <div class="col-1">
                 <h6>Estado: </h6>
                 <select class="form-control" id="uf" name="uf">
                     <option value="AC">AC</option>
@@ -152,7 +152,7 @@
                     <option value="SE">SE</option>
                     <option value="TO">TO</option>
                 </select>
-            </div>
+            </div> -->
         </div>
             
         <button name="cadastrar" id="cadastrar" class="btn btn-primary mt-2">Salvar</a>

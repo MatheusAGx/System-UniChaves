@@ -49,7 +49,7 @@
             <div class="row p-2">
                 <div class="col-12">
                     <h6>Observação: </h6>
-                    <textarea class="form-control" aria-label="observacoes" name="observacoes" rows="10" cols="50"></textarea>
+                    <textarea class="form-control" aria-label="observacoes" name="observacoes" rows="5" cols="50"></textarea>
                 </div>
             </div>
             

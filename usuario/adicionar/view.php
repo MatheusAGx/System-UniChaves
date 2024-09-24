@@ -31,11 +31,11 @@
   
     <div class="card-body">
         <h3 class="card-title">Cadastro de Usúário</h3>
-        <form method="post" action="#" name="regUsuario" enctype="multipart/form-data"> 
+        <form method="post" action="" name="regUsuario" enctype="multipart/form-data"> 
         <div class="row p-2" >
             <div class="col-6">
                 <h6>Nome: </h6>
-                <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome" aria-label="Nome" required>
+                <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome" aria-label="Nome" <?php if(isset($_POST['nome'])) { echo "value=".$_POST['nome'].""; } ?> required>
             </div>
             <div class="col-3">
                 <h6>Instituicao: </h6>
@@ -57,12 +57,12 @@
         <div class="row p-2">
             <div class="col-6">
                 <h6>Senha: </h6>
-                <input id="senha" onkeyup="validaSenha()" name="senha" type="password" class="form-control" placeholder="Senha (mínimo 8 caracteres)" aria-label="Senha">
+                <input id="senha" onkeyup="validaSenha()" name="senha" type="password" class="form-control" placeholder="Senha (mínimo 8 caracteres)" aria-label="Senha" <?php if(isset($_POST['senha'])) { echo "value=".$_POST['senha'].""; } ?>>
                 <span class="p-1 validacao" id="msg_senha"></span>
             </div>
             <div class="col-6">
                 <h6>Confirme sua senha: </h6>
-                <input id="confirma-senha" onkeyup="validaConfirmaSenha()" name="confirma-senha" type="password" class="form-control" placeholder="Confirme sua senha">
+                <input id="confirma-senha" onkeyup="validaConfirmaSenha()" name="confirma-senha" type="password" class="form-control" placeholder="Confirme sua senha" <?php if(isset($_POST['confirma_senha'])) { echo "value=".$_POST['confirma_senha'].""; } ?>>
                 <span class="p-1 validacao" id="msg_confirma_senha"></span>
             </div>
         </div>
@@ -70,13 +70,13 @@
         <div class="row p-2" >
             <div class="col-6">
                 <h6>CPF: </h6>
-                <input id="cpf" onkeyup="msgCpf()" name="cpf" type="text" class="form-control" placeholder="CPF XXX.XXX.XXX-XX" aria-label="CPF">
+                <input id="cpf" onkeyup="msgCpf()" name="cpf" type="text" class="form-control" placeholder="CPF XXXXXXXXXXX" aria-label="CPF" <?php if(isset($_POST['cpf'])) { echo "value=".$_POST['cpf'].""; } ?>>
                 <span class="p-1 validacao" id="msg_cpf"></span>
             </div>
                 
             <div class="col-6">
                 <h6>CNPJ: </h6>
-                <input id="cnpj" onkeyup="msgCnpj()" name="cnpj" type="text" class="form-control" placeholder="CNPJ" aria-label="CNPJ">
+                <input id="cnpj" onkeyup="msgCnpj()" name="cnpj" type="text" class="form-control" placeholder="CNPJ XXXXXXXXXXXXXX" aria-label="CNPJ" <?php if(isset($_POST['cnpj'])) { echo "value=".$_POST['cnpj'].""; } ?>>
                 <span class="p-1 validacao" id="msg_cnpj"></span>
             </div>
         </div>
@@ -84,13 +84,13 @@
         <div class="row p-2" >
             <div class="col-6">
                 <h6>E-mail: </h6>
-                <input id="email" onkeyup="msgEmail()" name="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail">
+                <input id="email" onkeyup="msgEmail()" name="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" <?php if(isset($_POST['email'])) { echo "value=".$_POST['email'].""; } ?>>
                 <span class="p-1 validacao" id="msg_email"></span>
             </div>
         
             <div class="col-6">
                 <h6>Telefone: </h6>
-                <input id="tel1" onkeyup="msgTelefone1()" name="tel" type="text" class="form-control" placeholder="(DDD) + Número" aria-label="(DDD) 9 xxxx-xxxx">
+                <input id="tel1" onkeyup="msgTelefone1()" name="tel" type="text" class="form-control" placeholder="(DDD) + Número" aria-label="(DDD) 9 xxxx-xxxx" <?php if(isset($_POST['tel'])) { echo "value=".$_POST['tel'].""; } ?>>
                 <span class="p-1 validacao" id="msg_tel"></span>
             </div>
         </div>
@@ -99,30 +99,30 @@
             <h4>Endereço</h4>
             <div class="col-2">
                 <h6>CEP: </h6>
-                <input id="cep" name="cep" type="text" class="form-control" placeholder="CEP" aria-label="CEP">
+                <input id="cep" name="cep" type="text" class="form-control" placeholder="CEP" aria-label="CEP" <?php if(isset($_POST['cep'])) { echo "value=".$_POST['cep'].""; } ?>>
                 <span class="p-1 validacao" id="msg_cep"></span>
             </div>
             <div class="col-8">
                 <h6>Endereço: </h6>
-                <input id="endereco" name="endereco" type="text" class="form-control" placeholder="Rua ou Avenida" aria-label="Lagradouro">
+                <input id="endereco" name="endereco" type="text" class="form-control" placeholder="Rua ou Avenida" aria-label="Lagradouro" <?php if(isset($_POST['endereco'])) { echo "value=".$_POST['endereco'].""; } ?>>
             </div>
             <div class="col-2">
                 <h6>Número: </h6>
-                <input id="numero_casa" name="numero_casa" type="text" class="form-control" placeholder="Nº" aria-label="Número da casa">
+                <input id="numero_casa" name="numero_casa" type="text" class="form-control" placeholder="Nº" aria-label="Número da casa" <?php if(isset($_POST['numero_casa'])) { echo "value=".$_POST['numero_casa'].""; } ?>>
             </div>
         </div>
         <div class="row p-2">
             <div class="col-4">
                 <h6>Bairro: </h6>
-                <input id="bairro" name="bairro" type="text" class="form-control" placeholder="Bairro" aria-label="Bairro">
+                <input id="bairro" name="bairro" type="text" class="form-control" placeholder="Bairro" aria-label="Bairro" <?php if(isset($_POST['bairro'])) { echo "value=".$_POST['bairro'].""; } ?>>
             </div>
             <div class="col-4">
                 <h6>Cidade: </h6>
-                <input id="cidade" name="cidade" type="text" class="form-control" placeholder="Cidade" aria-label="Cidade">
+                <input id="cidade" name="cidade" type="text" class="form-control" placeholder="Cidade" aria-label="Cidade" <?php if(isset($_POST['cidade'])) { echo "value=".$_POST['cidade'].""; } ?>>
             </div>
             <div class="col-4">
                 <h6>Complemento: </h6>
-                <input id="complemento" name="complemento" type="text" class="form-control" placeholder="Complemento" aria-label="Complemento do endereço">
+                <input id="complemento" name="complemento" type="text" class="form-control" placeholder="Complemento" aria-label="Complemento do endereço" <?php if(isset($_POST['complemento'])) { echo "value=".$_POST['complemento'].""; } ?>>
             </div>
         <!--    <div class="col-1">
                 <h6>Estado: </h6>

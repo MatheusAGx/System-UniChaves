@@ -27,19 +27,17 @@ include "../../config/header/header.php";
     </div>
 </div>
 
-<div class="card my-2" style="width: full;">
-    <form method="post" action="" name="formDelete">
-        <div class="alert alert-danger" role="alert">
+<form method="post" action="" name="formDelete">
+    <div class="alert alert-danger" role="alert">
         <strong> Você tem certeza que dejesa deletar este item?</strong>
         <?php while($chave = $busca_chave->fetch_object()) { ?>
             <p><?= $chave->nome ?></p>
         <?php } ?>
-        </div>
-        <div class="row mb-3 w-50" style="margin: auto;">
-            <button class="btn-danger btn" name="deletar" id="deletar">Deletar</button>
-        </div>
-    </form>
-</div>
+    </div>
+    <div class="row mb-3 w-50" style="margin: auto;">
+        <button class="btn-danger btn" name="deletar" id="deletar">Deletar</button>
+    </div>
+</form>
 <?php
 include "../../config/footer/footer.php";
 ?>

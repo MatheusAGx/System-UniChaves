@@ -3,6 +3,12 @@ include "../../config/header/header.php";
 
 ?>
 
+<div class="card my-2">
+    <div class="card-body">
+        <a href="/php/usuario" class="btn btn-primary">Voltar</a>
+    </div>
+</div>
+
 <!-- ALERTAS -->
 
 <?php if ($sucesso): ?>

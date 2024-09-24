@@ -55,7 +55,7 @@ include "../config/header/header.php";
       </div>
       <div class="card-body">
         <div class="col-12 col-sm-12">
-          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?> </small> </div>
+          <div><small>Status: <?= $chave['tipo'] ?> | Instituição: <?= $chave['instituicao'] ?></small></div>
           <?php if($chave['descricao'] != null) { ?>
           <div><small>Descrição: <?= $chave['descricao'] ?> </small> </div>
           <?php } ?>
