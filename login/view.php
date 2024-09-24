@@ -29,7 +29,7 @@
         <img src="../uploads/images/logo.png" class="img-fluid p-3" alt="chave desenho" width="25%" height="42%">
         <form method="POST" action="" name="login_form" id="login_form">
             <div class="col-12 w-50 mt-5" style="text-align: left; margin: auto">
-                <h6>CPF:</h6>
+                <h6>CPF/CNPJ:</h6>
                 <input class="form-control" type="text" name="username" id="username">
             </div>
             <div class="col-12 w-50 mt-3" style="text-align: left; margin: auto">

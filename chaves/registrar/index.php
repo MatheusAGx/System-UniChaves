@@ -14,6 +14,11 @@ if(isset($_POST['registrar'])) {
     $observacoes = $conn->real_escape_string($_POST['observacoes']);
     $id_chave = $conn->real_escape_string($_POST['id_chave']);
 
+    $q_instituicao_usuario = "SELECT id_instituicao FROM usuarios WHERE id = '$id_usuario'";
+    $instituicao_usuario = $conn->query($q_instituicao_usuario);
+    $instituicao = $instituicao_usuario->fetch_array();
+    $id_instituicao = $instituicao['id_instituicao'];
+
     $q_busca_registro = "SELECT id_status FROM chave WHERE id = '$id' AND id_status = 2";
     $busca_registro = $conn->query($q_busca_registro);
 
@@ -21,7 +26,7 @@ if(isset($_POST['registrar'])) {
         $erro = true;
         $msg = "Erro na operação! Essa chave ja está registrada!";
     } else {
-        $q_insert = "INSERT INTO registros (id_usuario, id_chave, data_devolucao, data_registro, dias, observacao) VALUES ('$id_usuario', '$id_chave', '$data_devolucao', CURRENT_TIMESTAMP, 0, '$observacoes')";
+        $q_insert = "INSERT INTO registros (id_usuario, id_chave, data_devolucao, data_registro, dias, observacao, id_instituicao) VALUES ('$id_usuario', '$id_chave', '$data_devolucao', CURRENT_TIMESTAMP, 0, '$observacoes', '$id_instituicao')";
         $insert = $conn->query($q_insert);
 
         if ($insert) {
