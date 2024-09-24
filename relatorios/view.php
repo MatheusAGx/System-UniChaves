@@ -48,6 +48,8 @@
         <div class="card-body">
             <div class="row">
             <h4 class="mb-3"><b>Status Geral</b></h4>
+            <small><button style="background-color: rgb(96, 235, 177); width: 15px; height: 15px; border-radius: 50%;"></button> Chave Disponível</small>
+            <small><button class="mb-3" style="background-color: rgb(245, 103, 103); width: 15px; height: 15px; border-radius: 50%;"></button> Chave Ocupada</small>
             <?php while ($chave = $busca_chave->fetch_object()) { ?>
                 <div class="col-4 my-2 text-center">
                     <div class="card">

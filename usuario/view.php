@@ -22,7 +22,7 @@ include "../config/header/header.php";
             <input class="form-control" type="text" name="filtro_nome" id="filtro_nome" placeholder="Digite o nome do usuario">
           </div>
           <div class="col-3">
-            <small><strong>CPF:</strong></small>
+            <small><strong>CPF/CNPJ:</strong></small>
             <input class="form-control" type="text" name="filtro_cpf" id="filtro_cpf" placeholder="Digite o CPF do usuário">
           </div>
           <div class="col-3">
