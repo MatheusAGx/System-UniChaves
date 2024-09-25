@@ -3,7 +3,7 @@ include "../../config/config.php";
 
 $id = $_GET['id'];
 
-$q_busca_dados = "SELECT DATE_FORMAT(data_devolucao, '%d/%m/%Y') as data_dev, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT nome FROM usuarios WHERE id = id_usuario) as usuario, (SELECT nome FROM chave WHERE id = id_chave) as chave, observacao FROM registros WHERE id = '$id'";
+$q_busca_dados = "SELECT DATE_FORMAT(data_devolucao, '%d/%m/%Y') as data_dev, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT nome FROM usuarios WHERE id = id_usuario) as usuario, (SELECT nome FROM chave WHERE id = id_chave) as chave, observacao FROM registros WHERE id_chave = '$id'";
 $busca_dados = $conn->query($q_busca_dados);
 
 if (isset($_POST['devolver'])) {

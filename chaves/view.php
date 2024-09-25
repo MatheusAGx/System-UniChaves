@@ -21,6 +21,15 @@ include "../config/header/header.php";
             <small><strong>Nome:</strong></small>
             <input class="form-control" type="text" name="filtro_nome" id="filtro_nome" placeholder="Digite o nome da chave">
           </div>
+        <!--  <div class="col-4">
+            <small><strong>Status:</strong></small>
+            <select class="form-select" name="filtro_status" id="filtro_status">
+              <option value="0" selected></option>
+              <?php// while($status = $busca_status->fetch_object()) { ?>
+              <option value="<?=$status->id?>"><?= $status->descricao?></option>
+              <?php //} ?>
+            </select>
+          </div> -->
         </div>
         <div class="row">
           <div class="col-6 mt-2">

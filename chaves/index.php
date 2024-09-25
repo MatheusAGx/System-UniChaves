@@ -4,12 +4,19 @@ include "../config/config.php";
 
 $q_busca_chave = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ORDER BY nome ASC ";
 
-
 if (isset($_POST['filtrar'])) 
 {
     $nome = $conn->real_escape_string($_POST['filtro_nome']);
-    $q_busca_chaves = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave ";
-    $q_busca_chaves .= "WHERE nome LIKE '%$nome%' ORDER BY nome ASC ";
+    $status = $conn->real_escape_string($_POST['filtro_status']);
+
+    $q_busca_chaves = "SELECT *, (SELECT descricao FROM chave_instituicao WHERE id = id_instituicao) AS instituicao, (SELECT descricao FROM chave_status WHERE id = id_status) AS tipo, (SELECT nome FROM usuarios WHERE id=id_registro) as usuario, (SELECT observacao FROM registros WHERE id = id_registro) as observacao FROM chave WHERE 1 = 1 ";
+    if(!empty($nome)){
+        $q_busca_chaves .= "AND nome LIKE '%$nome%' ";
+    }
+    /*if(!empty($status)){
+        $q_busca_chave .= "AND id_status = '$status' ";
+    }*/
+    $q_busca_chaves .= " ORDER BY nome ASC ";
 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $perPage = 10;
