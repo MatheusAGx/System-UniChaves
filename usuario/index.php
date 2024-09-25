@@ -29,7 +29,6 @@ if (isset($_POST['filtrar']))
     }
 
     $q_busca_usuario .= "ORDER BY nome ASC";
-    echo $q_busca_usuario;
     
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $perPage = 10;
