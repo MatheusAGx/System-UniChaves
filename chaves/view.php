@@ -55,7 +55,7 @@ include "../config/header/header.php";
          if ($chave['tipo'] == "Reservada") { echo "background-color: orange;";} 
          ?>"></button><strong><?= $chave['nome'] ?></strong>
         <?php if ($chave['tipo'] == "Ocupada") { ?>
-          <a class="btn btn-warning btn-sm" style="float: right; margin-left: 0.5vw" href="./detalhes/?id=<?= $chave['id'] ?>"> Devolver </a> 
+          <a class="btn btn-warning btn-sm" style="float: right; margin-left: 0.5vw" href="./devolver/?id=<?= $chave['id'] ?>"> Devolver </a> 
         <?php } else { ?>
           <a class="btn btn-success btn-sm" style="float: right; margin-left: 0.5vw" href="./registrar/?id=<?= $chave['id'] ?>"> Registrar </a> 
         <?php } ?>

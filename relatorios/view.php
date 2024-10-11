@@ -50,20 +50,6 @@
         </div>
     </div>
 
-    <div class="card my-2">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-6">
-                    <h4 class="p-1" style="text-align:center;"><b>Registros por Mês</b></h4>
-                    <canvas id="ocorrencia_mês"></canvas>
-                </div>
-                <div class="col-6">
-                    <h4 class="p-1" style="text-align:center;"><b>Registros por Instituição</b></h4>
-                    <canvas id="ocorrencia_instituicao"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
 
