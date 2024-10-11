@@ -9,13 +9,13 @@
                 <div class="col-4">
                     <div class="bg-success p-10 text-white text-center py-2 rounded">
                         <h5 class="m-b-0 m-t-5"><?php echo $r_dia['COUNT(id)']; ?></h5>
-                        <small class="font-light">Registros Hoje</small>
+                        <small class="font-light">Registros do Dia</small>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="bg-warning p-10 text-white text-center py-2 rounded">
                         <h5 class="m-b-0 m-t-5"><?php echo $r_mes['COUNT(id)']; ?></h5>
-                        <small class="font-light">Registros do Mês</small>
+                        <small class="font-light">Registros Últimos 30 Dias</small>
                     </div>
                 </div>
                 <div class="col-4">
@@ -29,13 +29,13 @@
                 <div class="col-4">
                     <div class="bg-primary p-10 text-white text-center py-2 rounded">
                         <h5 class="m-b-0 m-t-5"><?php echo $o_dia['COUNT(id)']; ?></h5>
-                        <small class="font-light">Ocorrências Hoje</small>
+                        <small class="font-light">Ocorrências do Dia</small>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="bg-info p-10 text-white text-center py-2 rounded">
                         <h5 class="m-b-0 m-t-5"><?php echo $o_mes['COUNT(id)']; ?></h5>
-                        <small class="font-light">Ocorrências do Mês</small>
+                        <small class="font-light">Ocorrências Últimos 30 Dias</small>
                     </div>
                 </div>
                 <div class="col-4">
