@@ -7,7 +7,7 @@ $q_busca_dados = "SELECT DATE_FORMAT(data_devolucao, '%d/%m/%Y') as data_dev, (S
 $busca_dados = $conn->query($q_busca_dados);
 
 if (isset($_POST['devolver'])) {
-    $q_devolve_chave = "UPDATE chave SET contador = 0, id_status = 1 WHERE id = '$id'";
+    $q_devolve_chave = "UPDATE chave SET contador = 0, id_status = 1, id_registro = NULL WHERE id = '$id'";
     $devolve_chave = $conn->query($q_devolve_chave);
 
     $q_inativa = "UPDATE registros SET inativo = 1, ativo = 0 WHERE id_chave = '$id'";
